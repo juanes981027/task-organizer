@@ -1,0 +1,140 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+
+}
+
+.contenedor{
+  width: 100%;
+  display: flex;
+  max-width: 100%;
+  height: 100vh;
+}
+.aside{
+  background-color: #f4f4f4;
+}
+.main{
+  display: flex;
+  flex-direction: column;
+  background-image: url('./imgs/beach.jpg');
+
+}
+.main > * {
+  width: 95%;
+  margin: 0 auto;
+}
+.header{
+  color: white;
+  font-weight: bold;
+}
+.aside-content ul{
+  padding: 0;
+  cursor: pointer;
+}
+.aside-content ul :hover{
+background-color: #d9d9d9;
+color: blue;
+}
+.aside-content{
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  /* margin: 2rem 0; */
+  padding: 0 1rem;
+}
+/* .aside-content h5{
+  padding: 0.4rem;
+} */
+.aside-content ul li{
+  padding: 0.4rem;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+li > * {
+  text-decoration: none;
+  color: black;
+  margin: 0;
+  
+}
+
+.active{
+  font-weight: bold;
+}
+.card{
+  align-items: center;
+  flex-direction: row;
+  padding: 0 1rem;
+}
+.card > *{
+  margin: 0;
+}
+.create-task{
+  
+}
+.task-status{
+  padding: 0 1rem;
+  font-size: 0.8rem;
+}
+.no-tasks-text{
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  color: black;
+}
+.no-tasks-text svg{
+  font-size: 5rem;
+  margin: 0 1rem;
+}
+.svg-success{
+  font-size: 4rem !important;
+}
+.aside-content svg{
+ margin: 0 0.5rem 0 0;
+}
+
+/* @font-face {
+  font-family: 'Poppins', sans-serif;
+
+} */
+
+.aside-content h1{
+  font-weight: bold;
+  padding: 0 0.4rem;
+}
+
+.btn-primary{
+  position: fixed;
+  bottom: 1rem;
+  background-color: black;
+  border: black;
+  opacity: 0.7;
+  max-width: -webkit-fill-available;
+  margin: 0 1rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 0.6rem;
+  gap: 0.5rem;
+}
+/* .btn:active{
+  background-color: black ;
+} */
+.btn-primary:active{
+  background-color: black ;
+}
+.btn:hover{
+  background-color: black ;
+}
+
+
+.trash-can-icon:hover{
+  color: red;
+}
+
+.card-body-done{
+  text-decoration: line-through
+}
