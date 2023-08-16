@@ -32,6 +32,13 @@ function App() {
       }
 
     }
+    else{
+      Swal.fire({
+        icon: 'warning',
+        title: 'Oops...',
+        text: 'Debes ingresar el nombre de la tarea',
+      })
+    }
     
   }
 
