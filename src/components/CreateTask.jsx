@@ -12,7 +12,7 @@ export let CreateTask = ({ newTask }) => {
 
     return <>
 
-        <button className="btn btn-primary" onClick={toggleModal}> <VscAdd /> Agregar Tarea</button>
+        <button className="btn btn-primary" onClick={e=>(toggleModal(e.currentTarget.blur()))}> <VscAdd /> Agregar Tarea</button>
         <CreateTaskDialog toggleModal={toggleModal} open={open} setOpen={setOpen} newTask={newTask} />
     </>
 

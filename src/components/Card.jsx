@@ -15,8 +15,6 @@ export const Card = ({ task, toggleCheckBox, deleteTasks, tasks }) => {
                 let filteredTasks = tasks.filter(task => task.taskName !== taskName)
                 deleteTasks(filteredTasks)
                 Swal.fire('Tarea eliminada!', '', 'success')
-            } else if (result.isDenied) {
-
             }
           })
         

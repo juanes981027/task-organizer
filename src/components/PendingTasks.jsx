@@ -7,8 +7,7 @@ export const PendingTasks = ({ tasks, toggleCheckBox, deleteTasks }) => {
 
     return <>
         {tasks.find(item=>item.status === false) ?
-        tasks.filter(item=> item.status === false)
-        .map(task =>
+        tasks.map(task =>
             
             <Card key={task.taskName} tasks={tasks} task={task} toggleCheckBox={toggleCheckBox} deleteTasks={deleteTasks}/>
 

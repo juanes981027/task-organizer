@@ -14,12 +14,12 @@ export default function FormDialog({toggleModal, open, setOpen, newTask}) {
 
   const createNewTask=()=>{
     newTask(task) 
-    setOpen(prevOpen => !prevOpen)
-
+    setOpen(!open);
   }
   const handleKeyDown = (event) => {
     if (event.key === 'Enter') {
-      createNewTask();
+      event.preventDefault()
+      createNewTask()
     }
   };
 
@@ -29,14 +29,14 @@ export default function FormDialog({toggleModal, open, setOpen, newTask}) {
 
   return (
     <div>
-      <Dialog open={open} onClose={toggleModal}>
+      <Dialog className='create-task-dialog' open={open} onClose={toggleModal}>
         <DialogTitle>Crear nueva tarea</DialogTitle>
         <DialogContent>
           <TextField
+            autoFocus
             onChange={e=>setTask(e.target.value)}
             onKeyDown={handleKeyDown}
             autoComplete='off'
-            autoFocus
             margin="dense"
             id="name"
             label="Nombre de tarea"
@@ -47,7 +47,7 @@ export default function FormDialog({toggleModal, open, setOpen, newTask}) {
         </DialogContent>
         <DialogActions>
           <Button onClick={toggleModal}>Cancelar</Button>
-          <Button onClick={createNewTask} autoFocus>Guardar tarea</Button>
+          <Button  onClick={createNewTask}>Guardar tarea</Button>
         </DialogActions>
       </Dialog>
     </div>

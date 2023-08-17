@@ -11,35 +11,26 @@ import { PendingTasks } from './components/PendingTasks';
 import { DoneTasks } from './components/DoneTasks';
 
 function App() {
-  
+
   const [tasks, setTasks] = useState([])
   const newTask = (data) => {
 
-    if(data){
-      if (!tasks.find((item) => item.taskName === data)) {
-        setTasks([...tasks, { taskName: data, status: false }])
-        Swal.fire({
-          icon: 'success',
-          title: 'Tarea creada!',
-        })
-      }
-      else {
-        Swal.fire({
-          icon: 'warning',
-          title: 'Oops...',
-          text: 'La tarea ya existe',
-        })
-      }
-
+    if (!tasks.find((item) => item.taskName === data)) {
+      setTasks([...tasks, { taskName: data, status: false }])
+      Swal.fire({
+        icon: 'success',
+        title: 'Tarea creada!',
+        // showConfirmButton: false,
+        // timer: 1000
+      })
     }
-    else{
+    else {
       Swal.fire({
         icon: 'warning',
         title: 'Oops...',
-        text: 'Debes ingresar el nombre de la tarea',
+        text: 'La tarea ya existe',
       })
     }
-    
   }
 
   const toggleCheckBox = (task) => {
