@@ -6,9 +6,10 @@ import { useEffect } from 'react';
 import Header from './components/Header';
 import AsideOptions from './components/AsideOptions';
 import Swal from 'sweetalert2'
-import { Route, BrowserRouter, Routes } from 'react-router-dom';
+import { Route, BrowserRouter, Routes, Navigate } from 'react-router-dom';
 import { PendingTasks } from './components/PendingTasks';
 import { DoneTasks } from './components/DoneTasks';
+import { NotFoundPage } from './components/NotFound';
 
 function App() {
 
@@ -62,9 +63,11 @@ function App() {
         <main className='col-9 main'>
           <Header className="mb-5" />
           <Routes>
+            <Route path='/' element={<Navigate replace to='/all-tasks'/>}/>
             <Route path='/all-tasks' element={<TaskList toggleCheckBox={toggleCheckBox} tasks={tasks} deleteTasks={deleteTasks} />} />
             <Route path='/pending-tasks' element={<PendingTasks toggleCheckBox={toggleCheckBox} tasks={tasks} deleteTasks={deleteTasks} />} />
             <Route path='/done-tasks' element={<DoneTasks toggleCheckBox={toggleCheckBox} tasks={tasks} deleteTasks={deleteTasks} />} />
+            <Route path='*' element={<NotFoundPage/>} />
           </Routes>
           <CreateTask newTask={newTask} />
         </main>
